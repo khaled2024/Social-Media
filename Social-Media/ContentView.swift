@@ -11,7 +11,7 @@ struct ContentView: View {
     @AppStorage("log_Status") var logStatus: Bool = false
     var body: some View {
         if logStatus{
-            Text("Main View :)")
+            MainView()
         }else{
             LoginView()
         }

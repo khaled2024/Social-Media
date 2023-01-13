@@ -62,6 +62,7 @@ class RegisterViewModel: ObservableObject{
                 })
             }
             catch {
+                try await Auth.auth().currentUser?.delete()
                 await setError(error)
             }
         }
