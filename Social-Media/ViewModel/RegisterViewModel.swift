@@ -56,7 +56,7 @@ class RegisterViewModel: ObservableObject{
                         self.userNameStored = self.username
                         self.userIDStored = userUID
                         self.profileURL = downloadURL
-                        // here to make Main view appear 
+                        // here to make Main view appear
                         self.logStatus = true
                     }
                 })

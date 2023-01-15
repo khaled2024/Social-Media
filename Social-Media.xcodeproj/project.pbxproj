@@ -29,6 +29,10 @@
 		EAC8D56D297197AE0020C679 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8D56C297197AE0020C679 /* ProfileView.swift */; };
 		EAC8D5702971A82E0020C679 /* ReusableProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */; };
 		EAC8D5782971AA150020C679 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = EAC8D5772971AA150020C679 /* SDWebImageSwiftUI */; };
+		EAD98F2D2973FF9500A62C61 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD98F2C2973FF9500A62C61 /* ProfileViewModel.swift */; };
+		EAD98F2F297406A500A62C61 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD98F2E297406A500A62C61 /* Post.swift */; };
+		EAD98F312974072A00A62C61 /* CreateNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD98F302974072900A62C61 /* CreateNewPost.swift */; };
+		EAD98F4F29743CD800A62C61 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD98F4E29743CD800A62C61 /* PostsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		EAC8D5692971969C0020C679 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EAC8D56C297197AE0020C679 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProfileContent.swift; sourceTree = "<group>"; };
+		EAD98F2C2973FF9500A62C61 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EAD98F2E297406A500A62C61 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EAD98F302974072900A62C61 /* CreateNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPost.swift; sourceTree = "<group>"; };
+		EAD98F4E29743CD800A62C61 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +99,10 @@
 				EA14D1AF29706C5D003A4B03 /* GoogleService-Info.plist */,
 				EA14D19B297069A5003A4B03 /* Social_MediaApp.swift */,
 				EA14D19D297069A5003A4B03 /* ContentView.swift */,
+				EA14D1A9297069B6003A4B03 /* Model */,
 				EA7D87B2297083A000EC03DC /* Extensions */,
 				EA7D87AB297082CA00EC03DC /* ViewModel */,
 				EA14D1AA297069BC003A4B03 /* View */,
-				EA14D1A9297069B6003A4B03 /* Model */,
 				EA14D19F297069A6003A4B03 /* Assets.xcassets */,
 				EA14D1A1297069A6003A4B03 /* Preview Content */,
 			);
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				EA7D87C329709DA700EC03DC /* User.swift */,
+				EAD98F2E297406A500A62C61 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 			children = (
 				EA7D87AE2970830700EC03DC /* LoginViewModel.swift */,
 				EA7D87B02970831900EC03DC /* RegisterViewModel.swift */,
+				EAD98F2C2973FF9500A62C61 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 				EAC8D5692971969C0020C679 /* MainView.swift */,
 				EAC8D56C297197AE0020C679 /* ProfileView.swift */,
 				EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */,
+				EAD98F4E29743CD800A62C61 /* PostsView.swift */,
+				EAD98F302974072900A62C61 /* CreateNewPost.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -258,14 +270,18 @@
 				EA14D1AE29706A2F003A4B03 /* LoginView.swift in Sources */,
 				EA7D87B12970831900EC03DC /* RegisterViewModel.swift in Sources */,
 				EA7D87AD297082D900EC03DC /* RegisterView.swift in Sources */,
+				EAD98F2D2973FF9500A62C61 /* ProfileViewModel.swift in Sources */,
 				EAC8D56A2971969C0020C679 /* MainView.swift in Sources */,
+				EAD98F2F297406A500A62C61 /* Post.swift in Sources */,
 				EA7D87B4297083FC00EC03DC /* Extension+View.swift in Sources */,
 				EA7D87C429709DA700EC03DC /* User.swift in Sources */,
 				EA14D19E297069A5003A4B03 /* ContentView.swift in Sources */,
 				EA7D87AF2970830700EC03DC /* LoginViewModel.swift in Sources */,
+				EAD98F312974072A00A62C61 /* CreateNewPost.swift in Sources */,
 				EA14D19C297069A5003A4B03 /* Social_MediaApp.swift in Sources */,
 				EAC8D56D297197AE0020C679 /* ProfileView.swift in Sources */,
 				EAC8D5702971A82E0020C679 /* ReusableProfileContent.swift in Sources */,
+				EAD98F4F29743CD800A62C61 /* PostsView.swift in Sources */,
 				EA7D87C92970ABD400EC03DC /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
