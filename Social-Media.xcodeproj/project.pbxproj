@@ -131,6 +131,7 @@
 			children = (
 				EAC8D56B2971979B0020C679 /* Login */,
 				EAC8D56E297197B20020C679 /* Main */,
+				EA7D87C82970ABD300EC03DC /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,7 +166,6 @@
 			children = (
 				EA14D1AD29706A2F003A4B03 /* LoginView.swift */,
 				EA7D87AC297082D900EC03DC /* RegisterView.swift */,
-				EA7D87C82970ABD300EC03DC /* LoadingView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -411,6 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Social-Media/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Social Media";
@@ -441,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Social-Media/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Social Media";

@@ -12,7 +12,7 @@ struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(spacing: 10) {
-            Text("Lets Register \nAccount")
+            Text("Let's Register")
                 .font(.largeTitle.bold())
                 .HAlign(.leading)
             Text("Hello user, you have a wonderful journey")
@@ -20,10 +20,9 @@ struct RegisterView: View {
                 .HAlign(.leading)
             //MARK: For Smaller Size Optimization
             ViewThatFits {
-                ScrollView(.vertical, showsIndicators: false) {
+                ScrollView(.vertical, showsIndicators: false){
                     HelperView()
                 }
-                HelperView()
             }
             //MARK: - Register Button
             HStack {
@@ -36,7 +35,7 @@ struct RegisterView: View {
                 .foregroundColor(.black)
             }
             .font(.callout)
-            .VAlign(.bottom)
+            //            .VAlign(.bottom)
         }
         .VAlign(.top)
         .padding(15)
@@ -65,6 +64,7 @@ struct RegisterView: View {
     @ViewBuilder
     func HelperView() -> some View {
         VStack(spacing: 12) {
+            // for image
             ZStack {
                 if let picData = registerVM.userProfilePicData, let image = UIImage(data: picData) {
                     Image(uiImage: image)
@@ -76,7 +76,7 @@ struct RegisterView: View {
                         .scaledToFit()
                 }
             }
-            .frame(width: 100, height: 100)
+            .frame(width: 90, height: 90)
             .clipShape(Circle())
             .contentShape(Circle())
             .onTapGesture {
@@ -108,8 +108,8 @@ struct RegisterView: View {
                     .fillView(.black)
             }
             .disableWithOpacity(registerVM.username == "" ||
-                                registerVM.emailID == "" ||
-                                registerVM.userBio == "" ||
+                                registerVM.emailID == ""  ||
+                                registerVM.userBio == ""  ||
                                 registerVM.password == "" ||
                                 registerVM.userProfilePicData == nil)
             .padding(.top, 10)

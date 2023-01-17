@@ -21,7 +21,6 @@ struct ReusableProfileContent: View {
                     .scaledToFill()
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())
-                    
                     VStackLayout(alignment: .leading){
                         Text(user.userName)
                             .font(.title3)
@@ -29,24 +28,28 @@ struct ReusableProfileContent: View {
                         Text(user.userBio)
                             .font(.caption)
                             .foregroundColor(.gray)
-                            .lineLimit(3)
+                            .lineLimit(4)
                         
                         if let bioLink = URL(string: user.userBioLink){
                             Link(user.userBioLink, destination: bioLink)
                                 .font(.callout)
                                 .tint(.blue)
                                 .lineLimit(1)
-                            
+                                .padding(.vertical, 2)
                         }
                     }
                     .HAlign(.leading)
+                    .padding(.vertical, 4)
                 }
+                Divider()
+                    .padding(.horizontal, 8)
+                    .tint(Color(uiColor: .darkGray))
                 Text("Posts")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
                     .HAlign(.leading)
-                    .padding(.vertical,15)
+                    .padding(.vertical,10)
             }
             .padding(15)
         }

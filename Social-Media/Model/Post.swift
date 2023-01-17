@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestoreSwift
+
 struct Post: Identifiable,Codable{
     @DocumentID var id: String?
     var text: String
@@ -31,6 +32,5 @@ struct Post: Identifiable,Codable{
         case userID
         case userProfileURL
     }
-    
 }
 

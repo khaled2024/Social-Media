@@ -11,12 +11,14 @@ import PhotosUI
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
+
 struct CreateNewPost: View {
-    //MARK: - call back
+    //MARK: - Proparties...
+    //call back
     var onPost: (Post)->()
     @State private var postText: String = ""
     @State private var postImageData: Data?
-    
+    // UserDefaults
     @AppStorage("user_profile_url") private var profileURL:URL?
     @AppStorage("user_name") private var userNameStored: String = ""
     @AppStorage("user_UID") private var userIDStored: String = ""
@@ -29,20 +31,20 @@ struct CreateNewPost: View {
     @State private var photoItem: PhotosPickerItem?
     // to toggle the keyboard on and off
     @FocusState private var showKeyboard: Bool
-    
     var body: some View {
         VStack{
+            //MARK: - Header...
             HStack{
+                // Cancle button...
                 Menu {
-                    Button("Cancle",role: .destructive) {
-                        dismiss()
-                    }
+                    Button("Cancle",role: .destructive){dismiss()}
                 } label: {
                     Text("Cancle")
                         .font(.callout)
                         .foregroundColor(.black)
                 }
                 .HAlign(.leading)
+                // Post button...
                 Button {
                     // post to firebase
                     createPost()
@@ -56,7 +58,7 @@ struct CreateNewPost: View {
                         .clipShape(Capsule())
                 }
                 // disable btn...
-                .disableWithOpacity(postText == "")
+                .disableWithOpacity(postText == "" && self.postImageData == nil)
             }
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
@@ -65,11 +67,13 @@ struct CreateNewPost: View {
                     .fill(.gray.opacity(0.05))
                     .ignoresSafeArea()
             )
+            //MARK: - Content (Text & Image)...
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15){
                     TextField("What's happening", text: $postText,axis: .vertical)
                         .focused($showKeyboard)
-                    if let postImageData = self.postImageData,let image = UIImage(data: postImageData){
+                    if let postImageData = self.postImageData,
+                       let image = UIImage(data: postImageData){
                         GeometryReader { geo in
                             let size = geo.size
                             Image(uiImage: image)
@@ -95,13 +99,13 @@ struct CreateNewPost: View {
                         .clipped()
                         .frame(height: 220)
                     }
-                    
                 }
                 .padding(15)
             }
             Divider()
+            //MARK: - Fotter...
             HStack{
-                // Show ImagePicker...
+                // Show ImagePicker button...
                 Button {
                     showImagePicker.toggle()
                 } label: {
@@ -110,7 +114,7 @@ struct CreateNewPost: View {
                         .foregroundColor(.black)
                 }
                 .HAlign(.leading)
-                // Done...
+                // Done button...
                 Button("Done") {
                     showKeyboard = false
                 }
@@ -118,8 +122,8 @@ struct CreateNewPost: View {
             .padding(10)
         }
         .VAlign(.top)
-        // show PhotosPicker...
-        // here it first append the image to "photoItem" then to "new value" when user pick another photo the new value go to rawImageData load it and convert to Data then to the "image" to convert it to uiImage then "compressedImageData" to make it pegData. and we must make "photoItem" nil if user pick a diff picture :)
+        // Show PhotosPicker...
+        // Here it first append the image to "photoItem" then to "new value" when user pick another photo the new value go to rawImageData load it and convert to Data then to the "image" to convert it to uiImage then "compressedImageData" to make it pegData. and we must make "photoItem" nil if user pick a diff picture :)
         .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
         .onChange(of: photoItem) { newValue in
             Task{
@@ -139,7 +143,7 @@ struct CreateNewPost: View {
         }
     }
     //MARK: - Functions
-    // create post...
+    // Create post...
     func createPost(){
         isLoading = true
         showKeyboard = false
@@ -164,7 +168,7 @@ struct CreateNewPost: View {
             }
         }
     }
-    // create post object with image ID and URL...
+    // Create post object with image ID and URL...
     func createDocumentAtFirebase(_ post: Post)async throws{
         let _ = try Firestore.firestore().collection("Posts").document(userIDStored).setData(from: post, completion: { error in
             if error == nil{
@@ -174,7 +178,7 @@ struct CreateNewPost: View {
             }
         })
     }
-    // displaying error...
+    // Display error...
     func setError(_ error: Error)async{
         await MainActor.run(body: {
             errorMessage = error.localizedDescription
