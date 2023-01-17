@@ -170,10 +170,13 @@ struct CreateNewPost: View {
     }
     // Create post object with image ID and URL...
     func createDocumentAtFirebase(_ post: Post)async throws{
-        let _ = try Firestore.firestore().collection("Posts").document(userIDStored).setData(from: post, completion: { error in
+        let doc = Firestore.firestore().collection("Posts").document()
+        let _ = try doc.setData(from: post, completion: { error in
             if error == nil{
                 isLoading = false
-                onPost(post)
+                var updatedPost = post
+                updatedPost.id = doc.documentID
+                onPost(updatedPost)
                 dismiss()
             }
         })

@@ -13,6 +13,8 @@
 		EA14D1A3297069A6003A4B03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA14D1A2297069A6003A4B03 /* Preview Assets.xcassets */; };
 		EA14D1AE29706A2F003A4B03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14D1AD29706A2F003A4B03 /* LoginView.swift */; };
 		EA14D1B029706C5D003A4B03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA14D1AF29706C5D003A4B03 /* GoogleService-Info.plist */; };
+		EA164425297714FB008B5099 /* ReusablePostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA164424297714FB008B5099 /* ReusablePostsView.swift */; };
+		EA164427297725E4008B5099 /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA164426297725E3008B5099 /* PostCardView.swift */; };
 		EA7D87AD297082D900EC03DC /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D87AC297082D900EC03DC /* RegisterView.swift */; };
 		EA7D87AF2970830700EC03DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D87AE2970830700EC03DC /* LoginViewModel.swift */; };
 		EA7D87B12970831900EC03DC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D87B02970831900EC03DC /* RegisterViewModel.swift */; };
@@ -43,6 +45,8 @@
 		EA14D1A2297069A6003A4B03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA14D1AD29706A2F003A4B03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EA14D1AF29706C5D003A4B03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA164424297714FB008B5099 /* ReusablePostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusablePostsView.swift; sourceTree = "<group>"; };
+		EA164426297725E3008B5099 /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
 		EA7D87AC297082D900EC03DC /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		EA7D87AE2970830700EC03DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EA7D87B02970831900EC03DC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -176,8 +180,10 @@
 				EAC8D5692971969C0020C679 /* MainView.swift */,
 				EAC8D56C297197AE0020C679 /* ProfileView.swift */,
 				EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */,
-				EAD98F4E29743CD800A62C61 /* PostsView.swift */,
 				EAD98F302974072900A62C61 /* CreateNewPost.swift */,
+				EAD98F4E29743CD800A62C61 /* PostsView.swift */,
+				EA164424297714FB008B5099 /* ReusablePostsView.swift */,
+				EA164426297725E3008B5099 /* PostCardView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -267,11 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA164427297725E4008B5099 /* PostCardView.swift in Sources */,
 				EA14D1AE29706A2F003A4B03 /* LoginView.swift in Sources */,
 				EA7D87B12970831900EC03DC /* RegisterViewModel.swift in Sources */,
 				EA7D87AD297082D900EC03DC /* RegisterView.swift in Sources */,
 				EAD98F2D2973FF9500A62C61 /* ProfileViewModel.swift in Sources */,
 				EAC8D56A2971969C0020C679 /* MainView.swift in Sources */,
+				EA164425297714FB008B5099 /* ReusablePostsView.swift in Sources */,
 				EAD98F2F297406A500A62C61 /* Post.swift in Sources */,
 				EA7D87B4297083FC00EC03DC /* Extension+View.swift in Sources */,
 				EA7D87C429709DA700EC03DC /* User.swift in Sources */,
@@ -411,7 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Social-Media/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Social Media";
@@ -442,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Social-Media/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Social Media";
