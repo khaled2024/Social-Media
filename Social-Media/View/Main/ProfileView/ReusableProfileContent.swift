@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 struct ReusableProfileContent: View {
     var user: User
+    @State private var fetchedPosts: [Post] = []
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack{
@@ -47,15 +48,16 @@ struct ReusableProfileContent: View {
                 Text("Posts")
                     .font(.title2)
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("ColorButton"))
                     .HAlign(.leading)
                     .padding(.vertical,10)
+                
+                ReusablePostView(basedOnUID: true, uid: user.userUID, posts: $fetchedPosts)
             }
             .padding(15)
         }
     }
 }
-
 struct ReusableProfileContent_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

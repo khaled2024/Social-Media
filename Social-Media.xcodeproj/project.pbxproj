@@ -27,6 +27,7 @@
 		EA7D87C429709DA700EC03DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D87C329709DA700EC03DC /* User.swift */; };
 		EA7D87C72970A1AA00EC03DC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EA7D87C62970A1AA00EC03DC /* FirebaseFirestoreSwift */; };
 		EA7D87C92970ABD400EC03DC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D87C82970ABD300EC03DC /* LoadingView.swift */; };
+		EAB756542978AB0200BF6521 /* SearchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB756532978AB0200BF6521 /* SearchUserView.swift */; };
 		EAC8D56A2971969C0020C679 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8D5692971969C0020C679 /* MainView.swift */; };
 		EAC8D56D297197AE0020C679 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8D56C297197AE0020C679 /* ProfileView.swift */; };
 		EAC8D5702971A82E0020C679 /* ReusableProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */; };
@@ -53,6 +54,7 @@
 		EA7D87B3297083FC00EC03DC /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		EA7D87C329709DA700EC03DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EA7D87C82970ABD300EC03DC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EAB756532978AB0200BF6521 /* SearchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserView.swift; sourceTree = "<group>"; };
 		EAC8D5692971969C0020C679 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EAC8D56C297197AE0020C679 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProfileContent.swift; sourceTree = "<group>"; };
@@ -140,6 +142,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EA64E8C12978064700A4BCCD /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				EAC8D56C297197AE0020C679 /* ProfileView.swift */,
+				EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		EA64E8C22978065D00A4BCCD /* PostView */ = {
+			isa = PBXGroup;
+			children = (
+				EAD98F4E29743CD800A62C61 /* PostsView.swift */,
+				EAD98F302974072900A62C61 /* CreateNewPost.swift */,
+				EA164424297714FB008B5099 /* ReusablePostsView.swift */,
+				EA164426297725E3008B5099 /* PostCardView.swift */,
+			);
+			path = PostView;
+			sourceTree = "<group>";
+		};
 		EA7D87AB297082CA00EC03DC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,12 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				EAC8D5692971969C0020C679 /* MainView.swift */,
-				EAC8D56C297197AE0020C679 /* ProfileView.swift */,
-				EAC8D56F2971A82E0020C679 /* ReusableProfileContent.swift */,
-				EAD98F302974072900A62C61 /* CreateNewPost.swift */,
-				EAD98F4E29743CD800A62C61 /* PostsView.swift */,
-				EA164424297714FB008B5099 /* ReusablePostsView.swift */,
-				EA164426297725E3008B5099 /* PostCardView.swift */,
+				EA64E8C12978064700A4BCCD /* ProfileView */,
+				EA64E8C22978065D00A4BCCD /* PostView */,
+				EAB756532978AB0200BF6521 /* SearchUserView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -277,6 +296,7 @@
 				EA14D1AE29706A2F003A4B03 /* LoginView.swift in Sources */,
 				EA7D87B12970831900EC03DC /* RegisterViewModel.swift in Sources */,
 				EA7D87AD297082D900EC03DC /* RegisterView.swift in Sources */,
+				EAB756542978AB0200BF6521 /* SearchUserView.swift in Sources */,
 				EAD98F2D2973FF9500A62C61 /* ProfileViewModel.swift in Sources */,
 				EAC8D56A2971969C0020C679 /* MainView.swift in Sources */,
 				EA164425297714FB008B5099 /* ReusablePostsView.swift in Sources */,

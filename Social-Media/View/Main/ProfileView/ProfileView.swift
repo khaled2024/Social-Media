@@ -39,7 +39,7 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "ellipsis")
                             .rotationEffect(Angle(degrees: 90))
-                            .tint(.black)
+                            .tint(Color("IconColor"))
                             .scaleEffect(0.8)
                     }
                 }
@@ -58,7 +58,7 @@ struct ProfileView: View {
             await profileVM.featchingUserData()
         }
     }
-   
+    
 }
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

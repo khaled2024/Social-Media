@@ -41,7 +41,7 @@ struct CreateNewPost: View {
                 } label: {
                     Text("Cancle")
                         .font(.callout)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("ColorButton"))
                 }
                 .HAlign(.leading)
                 // Post button...
@@ -51,13 +51,14 @@ struct CreateNewPost: View {
                 } label: {
                     Text("Post")
                         .font(.callout)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("ForegroundButton"))
                         .padding(.horizontal, 20)
                         .padding(.vertical,6)
-                        .background(.black)
+                        .background(Color("ColorButton"))
                         .clipShape(Capsule())
                 }
                 // disable btn...
+                //
                 .disableWithOpacity(postText == "" && self.postImageData == nil)
             }
             .padding(.horizontal, 15)
@@ -72,6 +73,7 @@ struct CreateNewPost: View {
                 VStack(spacing: 15){
                     TextField("What's happening", text: $postText,axis: .vertical)
                         .focused($showKeyboard)
+                        .tint(Color(uiColor: .secondarySystemGroupedBackground))
                     if let postImageData = self.postImageData,
                        let image = UIImage(data: postImageData){
                         GeometryReader { geo in
@@ -111,7 +113,7 @@ struct CreateNewPost: View {
                 } label: {
                     Image(systemName: "photo.on.rectangle")
                         .font(.title2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("ColorButton"))
                 }
                 .HAlign(.leading)
                 // Done button...

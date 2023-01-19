@@ -12,8 +12,10 @@ struct PostsView: View {
     @State private var recentsPost: [Post] = []
     var body: some View {
         NavigationStack{
-            ReusablePostsView(posts: $recentsPost)
-                .HAlign(.center).VAlign(.center)
+            ReusablePostView(posts: $recentsPost)
+                .HAlign(.center)
+                .VAlign(.center)
+            // floating btn...
                 .overlay {
                     Button {
                         createNewPost.toggle()
@@ -21,17 +23,30 @@ struct PostsView: View {
                         Image(systemName: "plus")
                             .font(.title)
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("ForegroundButton"))
+//                            .foregroundColor(Color("ColorButton"))
                             .padding(13)
-                            .background(.black,in:(Circle()))
+                            .background(Color("ColorButton"),in:(Circle()))
                     }
                     .padding(15)
                     .VAlign(.bottomTrailing)
                     .HAlign(.trailing)
                 }
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            SearchUserView()
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .tint(Color("IconColor"))
+                                .scaleEffect(0.9)
+                        }
+
+                    }
+                })
                 .navigationTitle("Posts")
         }
-        // to show full screen (Create-New-Post)...
+        // To Show full screen (Create-New-Post)...
         .fullScreenCover(isPresented: $createNewPost) {
             CreateNewPost(onPost: { post in
                 self.recentsPost.insert(post, at: 0)

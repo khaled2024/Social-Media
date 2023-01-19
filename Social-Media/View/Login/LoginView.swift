@@ -34,15 +34,15 @@ struct LoginView: View {
                 }
                 .font(.callout)
                 .fontWeight(.medium)
-                .tint(.black)
+                .tint(Color("ColorButton"))
                 .HAlign(.trailing)
                 Button {
                     loginVM.loginUser()
                 } label: {
                     Text("Sign in")
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("ForegroundButton"))
                         .HAlign(.center)
-                        .fillView(.black)
+                        .fillView(Color("ColorButton"))
                 }
                 .padding(.top, 10)
             } //: VSTACK
@@ -55,7 +55,7 @@ struct LoginView: View {
                     loginVM.createAccount.toggle()
                 }
                 .fontWeight(.bold)
-                .foregroundColor(.black)
+                .foregroundColor(Color("ColorButton"))
             }
             .font(.callout)
             .VAlign(.bottom)

@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
 import FirebaseStorage
+
 struct PostCardView: View {
     var post: Post
     var onUpdate: (Post)->()
@@ -27,7 +28,7 @@ struct PostCardView: View {
                 Text(post.userName)
                     .font(.callout)
                     .fontWeight(.semibold)
-                Text(post.puplishedDate.formatted(date: .numeric, time: .shortened))
+                Text(post.publishedDate.formatted(date: .numeric, time: .shortened))
                     .font(.caption2)
                     .foregroundColor(.gray)
                 Text(post.text)
@@ -57,9 +58,9 @@ struct PostCardView: View {
                     Button("Delete Post",role: .destructive,action: deletePost)
                 } label: {
                     Image(systemName: "ellipsis")
-                        .font(.caption)
+                        .font(.subheadline)
                         .rotationEffect(Angle(degrees: 90))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("IconColor"))
                         .padding(8)
                         .contentShape(Rectangle())
                 }
@@ -87,6 +88,8 @@ struct PostCardView: View {
             }
         }
         .onDisappear {
+            //MARK: Applying Snapshot Listener Only when the post is available on the screen
+            // Else Removing the listener (It saves unwanted live updates  from the posts which was swipped away from the screen)
             if let docListner{
                 docListner.remove()
                 self.docListner = nil
@@ -99,22 +102,27 @@ struct PostCardView: View {
         HStack(spacing: 6) {
             Button(action: {likePost()}) {
                 Image(systemName: post.likedIDs.contains(userIDStored) ? "hand.thumbsup.fill" : "hand.thumbsup")
+//                    .foregroundColor(.blue)
             }
             Text("\(post.likedIDs.count)")
                 .font(.caption)
                 .foregroundColor(.gray)
             Button(action: {dislikePost()}) {
                 Image(systemName: post.dislikedIDs.contains(userIDStored) ? "hand.thumbsdown.fill" : "hand.thumbsdown")
+//                    .foregroundColor(.red)
             }
             .padding(.leading, 25)
             Text("\(post.dislikedIDs.count)")
                 .font(.caption)
                 .foregroundColor(.gray)
         }
-        .foregroundColor(.black)
+        .foregroundColor(Color("IconColor"))
+        .font(.system(size: 20))
         .padding(.vertical, 8)
+//        .HAlign(.center)
     }
     //MARK: - functions...
+    // like post
     func likePost(){
         Task{
             guard let postID = post.id else{return}
@@ -132,12 +140,13 @@ struct PostCardView: View {
             }
         }
     }
+    // disLike post
     func dislikePost(){
         Task{
             guard let postID = post.id else{return}
             if post.dislikedIDs.contains(userIDStored){
                 // removing user id from the array...
-               try await Firestore.firestore().collection("Posts").document(postID).updateData([
+                try await Firestore.firestore().collection("Posts").document(postID).updateData([
                     "dislikedIDs" : FieldValue.arrayRemove([userIDStored])
                 ])
             }else{
@@ -149,6 +158,7 @@ struct PostCardView: View {
             }
         }
     }
+    // delete post
     func deletePost(){
         Task{
             // delete image from firebase...
@@ -156,7 +166,7 @@ struct PostCardView: View {
                 if post.imageRefID != ""{
                     try await Storage.storage().reference().child("Post_Images").child(post.imageRefID).delete()
                 }
-            // delete firestore document...
+                // delete firestore document...
                 guard let postID = post.id else{return}
                 try await Firestore.firestore().collection("Posts").document(postID).delete()
             }catch{

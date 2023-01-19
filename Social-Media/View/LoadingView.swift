@@ -18,7 +18,7 @@ struct LoadingView: View {
                         .ignoresSafeArea()
                     ProgressView()
                         .padding(15)
-                        .background(.white,in: RoundedRectangle(cornerRadius: 10,style: .continuous))
+                        .background(Color("ForegroundButton"),in: RoundedRectangle(cornerRadius: 10,style: .continuous))
                 }
             }
         }

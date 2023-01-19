@@ -13,7 +13,7 @@ struct Post: Identifiable,Codable, Equatable,Hashable{
     var text: String
     var imageURL: URL?
     var imageRefID: String = ""
-    var puplishedDate: Date = Date()
+    var publishedDate: Date = Date()
     var likedIDs: [String] = []
     var dislikedIDs: [String] = []
     var userName: String
@@ -25,7 +25,7 @@ struct Post: Identifiable,Codable, Equatable,Hashable{
         case text
         case imageURL
         case imageRefID
-        case puplishedDate
+        case publishedDate
         case likedIDs
         case dislikedIDs
         case userName

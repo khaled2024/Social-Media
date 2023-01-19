@@ -32,7 +32,7 @@ struct RegisterView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
                 .fontWeight(.bold)
-                .foregroundColor(.black)
+                .foregroundColor(Color("ColorButton"))
             }
             .font(.callout)
             //            .VAlign(.bottom)
@@ -71,9 +71,10 @@ struct RegisterView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 } else {
-                    Image("person")
+                    Image(systemName: "person.circle.fill")
                         .resizable()
                         .scaledToFit()
+                        .tint(Color("IconColor"))
                 }
             }
             .frame(width: 90, height: 90)
@@ -103,9 +104,9 @@ struct RegisterView: View {
             
             Button(action: registerVM.registerUser) {
                 Text("Sign up")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("ForegroundButton"))
                     .HAlign(.center)
-                    .fillView(.black)
+                    .fillView(Color("ColorButton"))
             }
             .disableWithOpacity(registerVM.username == "" ||
                                 registerVM.emailID == ""  ||
