@@ -102,11 +102,11 @@ struct ReusablePostView: View {
                     .whereField("userID", isEqualTo: uid)
             }
             let docs = try await query.getDocuments()
-            let fetchPosts = docs.documents.compactMap { doc -> Post? in
+            let fetchedPosts = docs.documents.compactMap { doc -> Post? in
                 try? doc.data(as: Post.self)
             }
             await MainActor.run(body: {
-                posts.append(contentsOf: fetchPosts)
+                posts.append(contentsOf: fetchedPosts)
                 paginationDoc = docs.documents.last
                 isFetching = false
             })
